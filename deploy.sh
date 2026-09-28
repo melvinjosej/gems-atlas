@@ -1,5 +1,5 @@
 #!/bin/bash
-# 💎 Gems Atlas App Deployment Script (x20web Self-Contained Bundle)
+# 💎 Gems Atlas App Deployment Script (x20web + GitHub Pages)
 # Exit immediately if any command fails
 set -e
 
@@ -96,9 +96,29 @@ chmod 0644 "$X20_DIR/index.html" "$X20_DIR/favicon.svg" "$X20_DIR/manifest.json"
 
 echo ""
 echo "=================================================="
+echo "🐙 4. PUBLISHING TO GITHUB PAGES (gh-pages)..."
+echo "=================================================="
+ORIGIN_URL=$(git remote get-url origin 2>/dev/null || true)
+if [ -n "$ORIGIN_URL" ]; then
+  TMP_GH=$(mktemp -d)
+  cp -r dist/* "$TMP_GH/"
+  touch "$TMP_GH/.nojekyll"
+  git -C "$TMP_GH" init -b gh-pages
+  git -C "$TMP_GH" config user.name "Melvin Johnson"
+  git -C "$TMP_GH" config user.email "melvinp@google.com"
+  git -C "$TMP_GH" add .
+  git -C "$TMP_GH" commit -m "Deploy Gems Atlas to GitHub Pages"
+  git -C "$TMP_GH" push -f "$ORIGIN_URL" gh-pages
+  rm -rf "$TMP_GH"
+fi
+
+echo ""
+echo "=================================================="
 echo "🎉 DEPLOYMENT COMPLETE PERFECTLY!"
 echo "=================================================="
 echo "Your interactive iPad Gems Atlas & Rock Tumbler app is now live!"
-echo "👉 Open this corporate URL on your iPad or browser:"
+echo "👉 GitHub Pages (Full Microphone & Storage Support):"
+echo "https://melvinjosej.github.io/gems-atlas/"
+echo "👉 Google x20web:"
 echo "https://melvinp.users.x20web.corp.google.com/www/gems-atlas/index.html"
 echo "=================================================="
