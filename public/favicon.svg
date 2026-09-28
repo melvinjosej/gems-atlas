@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="gemTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="50%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="gemFacet" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e879f9" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="#1e1b4b" stroke="#f59e0b" stroke-width="6" />
+  <polygon points="35,32 85,32 104,54 60,98 16,54" fill="url(#gemTop)" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="35,32 85,32 74,54 46,54" fill="#f0abfc" opacity="0.7" />
+  <polygon points="46,54 74,54 60,98" fill="url(#gemFacet)" opacity="0.85" />
+  <line x1="16" y1="54" x2="104" y2="54" stroke="#ffffff" stroke-width="2.5" />
+  <line x1="35" y1="32" x2="46" y2="54" stroke="#ffffff" stroke-width="2" />
+  <line x1="85" y1="32" x2="74" y2="54" stroke="#ffffff" stroke-width="2" />
+  <line x1="46" y1="54" x2="60" y2="98" stroke="#ffffff" stroke-width="2" />
+  <line x1="74" y1="54" x2="60" y2="98" stroke="#ffffff" stroke-width="2" />
+  <circle cx="30" cy="24" r="3.5" fill="#fde047" />
+  <circle cx="92" cy="26" r="2.5" fill="#fde047" />
+</svg>

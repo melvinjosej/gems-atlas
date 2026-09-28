@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --font-kids: "Quicksand", "Nunito", "Comic Sans MS", system-ui, sans-serif;
+}
+
+/* Global Kid-Friendly Reset */
+body {
+  margin: 0;
+  font-family: var(--font-kids);
+  background-color: #fdf4ff; /* Soft crystal lavender background */
+  overflow: hidden; /* Prevent rubber-banding scroll on iPad web view */
+  user-select: none; /* Prevent text selection callouts for a kid tapping */
+  -webkit-user-select: none;
+  -webkit-touch-callout: none; /* Prevent long-press popups */
+}
+
+/* Standalone PWA Layout Container */
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* SVG World Map Styles */
+svg#svg1926 {
+  width: 100%;
+  height: 100%;
+  background-color: #e0f2fe; /* Beautiful soft sky-blue ocean */
+  transition: transform 0.3s ease-out;
+}
+
+/* Basic path behaviors */
+path {
+  transition: fill 0.2s ease, stroke 0.2s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Base land paths (all countries) */
+.land {
+  fill: #f8fafc; /* Clean soft cream white for unsupported countries */
+  stroke: #cbd5e1; /* Soft gray borders */
+  stroke-width: 0.6;
+}
+
+/* Ocean background path inside SVG */
+.ocean {
+  fill: #e0f2fe !important;
+  stroke: none;
+  cursor: default;
+}
+
+/* Lakes/Rivers inside land mass */
+.lake {
+  fill: #e0f2fe !important;
+  stroke: #e0f2fe !important;
+  stroke-width: 0.2;
+  cursor: default;
+}
+
+/* 💎 CLICKABLE GEM COUNTRIES (65 Nations with Gem & Crystal Treasures) */
+.us, .br, .za, .mg, .in, .ca, .mx, .pe, .au, .cn, .af, .co, .mm, .lk, .bw, .ru, .eg, .ir, .cd, .tz, .ma, .is, .fi, .pl, .de, .ch, .cz, .es, .gb, .se, .no, .jp, .nz, .ar, .cl, .uy, .pk, .tr, .sa, .et, .gl, .gt, .ve, .bo, .ec, .fr, .it, .at, .gr, .ua, .ro, .na, .zm, .zw, .ke, .ng, .ao, .dz, .kz, .mn, .th, .vn, .id, .ph, .np,
+#us, #br, #za, #mg, #in, #ca, #mx, #pe, #au, #cn, #af, #co, #mm, #lk, #bw, #ru, #eg, #ir, #cd, #tz, #ma, #is, #fi, #pl, #de, #ch, #cz, #es, #gb, #se, #no, #jp, #nz, #ar, #cl, #uy, #pk, #tr, #sa, #et, #gl, #gt, #ve, #bo, #ec, #fr, #it, #at, #gr, #ua, #ro, #na, #zm, #zw, #ke, #ng, #ao, #dz, #kz, #mn, #th, #vn, #id, #ph, #np {
+  fill: #fde047 !important; /* Treasure gold yellow */
+  stroke: #d97706 !important; /* Rich amber borders */
+  stroke-width: 1.0;
+}
+
+/* Hover/Active Touch states for Supported Countries */
+.us:active, .br:active, .za:active, .mg:active, .in:active, .ca:active, .mx:active, .pe:active, .au:active, .cn:active, .af:active, .co:active, .mm:active, .lk:active, .bw:active, .ru:active, .eg:active, .ir:active, .cd:active, .tz:active, .ma:active, .is:active, .fi:active, .pl:active, .de:active, .ch:active, .cz:active, .es:active, .gb:active, .se:active, .no:active, .jp:active, .nz:active, .ar:active, .cl:active, .uy:active, .pk:active, .tr:active, .sa:active, .et:active, .gl:active, .gt:active, .ve:active, .bo:active, .ec:active, .fr:active, .it:active, .at:active, .gr:active, .ua:active, .ro:active, .na:active, .zm:active, .zw:active, .ke:active, .ng:active, .ao:active, .dz:active, .kz:active, .mn:active, .th:active, .vn:active, .id:active, .ph:active, .np:active {
+  fill: #ec4899 !important; /* Flash bright ruby-pink when touched! */
+}
+
+/* 🌟 SELECTED ACTIVE COUNTRY HIGHLIGHT STATE */
+.country-selected {
+  fill: #a855f7 !important; /* Brilliant amethyst purple */
+  stroke: #581c87 !important; /* Deep crystal border */
+  stroke-width: 1.8;
+  filter: drop-shadow(0px 4px 8px rgba(147, 51, 234, 0.45));
+  animation: pulse-selected 2s infinite ease-in-out;
+}
+
+@keyframes pulse-selected {
+  0% { opacity: 1.0; }
+  50% { fill: #c084fc !important; }
+  100% { opacity: 1.0; }
+}
+
+/* Hide default scrollbars in panels for an app-like experience */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom slow-bounce animation for narrator & action buttons */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2.5s infinite ease-in-out;
+}
+
+/* Rock Tumbler Barrel Spin Animation */
+@keyframes tumbler-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-tumbler-spin {
+  animation: tumbler-spin 1.4s linear infinite;
+}
