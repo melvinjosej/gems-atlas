@@ -1,0 +1,16 @@
+{
+  "short_name": "GemsAtlas",
+  "name": "My Interactive Atlas of Gems & Rock Tumbler Lab",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#fdf4ff",
+  "theme_color": "#9333ea",
+  "display": "standalone",
+  "orientation": "landscape"
+}
